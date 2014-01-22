@@ -1,0 +1,10 @@
+%h2 Review tool
+
+%p
+  Hello
+  = current_user.login
+
+%p
+  = link_to "Organizations", profile_organizations_path(profile_id: current_user.id)
+  = link_to "Repositories", profile_repositories_path(profile_id: current_user.id)
+= link_to "Logout", logout_path, method: :delete

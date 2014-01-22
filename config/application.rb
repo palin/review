@@ -19,5 +19,8 @@ module Review
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.middleware.use OmniAuth::Builder do
+      provider :github, ENV["GH_APP_CLIENT_ID"], ENV["GH_APP_CLIENT_SECRET"], scope: "user,repo"
+    end
   end
 end

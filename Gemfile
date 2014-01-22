@@ -2,9 +2,22 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+gem 'pg'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'authlogic'
+gem 'haml'
+gem 'oauth2'
+gem 'omniauth'
+gem 'omniauth-github', git: 'git://github.com/intridea/omniauth-github.git'
+gem 'decent_exposure'
+
+group :development do
+  gem 'pry'
+  gem 'pry-debugger'
+  gem 'pry-remote'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
