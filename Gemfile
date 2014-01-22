@@ -11,6 +11,7 @@ gem 'oauth2'
 gem 'omniauth'
 gem 'omniauth-github', git: 'git://github.com/intridea/omniauth-github.git'
 gem 'decent_exposure'
+gem 'rails_12factor'
 
 group :development do
   gem 'pry'
