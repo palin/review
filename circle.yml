@@ -5,16 +5,7 @@ deployment:
       - heroku plugins:install https://github.com/glenngillen/heroku-exit-status.git
       - git push git@heroku.com:review-staging.git $CIRCLE_SHA1:master:
           timeout: 300
+      - git push git@github.com:palin/review.git $CIRCLE_SHA1:staging
       - heroku run rake db:migrate -a review-staging
       - heroku restart -a review-staging
-      - git push git@github.com:palin/review.git $CIRCLE_SHA1:staging
       - git push git@github.com:palin/review.git --tags
-  smoke:
-    branch: smoke
-    commands:
-      - heroku maintenance:on -a review-smoke
-      - git push git@heroku.com:review-smoke.git $CIRCLE_SHA1:master:
-          timeout: 300
-      - heroku restart -a review-smoke
-      - git push git@github.com:palin/review.git --tags
-      - heroku maintenance:off -a review-smoke
