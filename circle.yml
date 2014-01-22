@@ -8,4 +8,3 @@ deployment:
       - heroku run rake db:migrate -a review-staging
       - heroku restart -a review-staging
       - git push git@github.com:palin/review.git $CIRCLE_SHA1:staging
-
