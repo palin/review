@@ -2,7 +2,6 @@ deployment:
   staging:
     branch: master
     commands:
-      - bundle exec rake code_review:raise
       - heroku plugins:install https://github.com/glenngillen/heroku-exit-status.git
       - git push git@heroku.com:review-staging.git $CIRCLE_SHA1:master:
           timeout: 300
